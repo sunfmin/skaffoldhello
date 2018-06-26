@@ -16,7 +16,7 @@ func main() {
 	fmt.Println("age", viper.GetInt("age"))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello 123, %q", html.EscapeString(r.URL.Path))
+		fmt.Fprintf(w, "Hello 12345, %q", html.EscapeString(r.URL.Path))
 	})
 
 	fmt.Println("starting at :8080")

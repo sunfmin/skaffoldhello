@@ -17,9 +17,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: skaffoldhello
-  labels:
-    app: skaffoldhello
+  name: skaffoldhello-deploy
 spec:
   replicas: 1
   selector:
