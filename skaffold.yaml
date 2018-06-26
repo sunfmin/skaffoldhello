@@ -5,10 +5,16 @@ build:
   tagPolicy:
     sha256: {}
   artifacts:
-    - imageName: sunfmin/skaffoldhello
+    - imageName: sunfmin/app1
       workspace: .
       docker:
-        dockerfilePath: Dockerfile
+        dockerfilePath: ./app1/Dockerfile
+    - imageName: sunfmin/app2
+      workspace: .
+      docker:
+        dockerfilePath: ./app2/Dockerfile
+  local:
+    skipPush: true
 
 deploy:
   kubectl:

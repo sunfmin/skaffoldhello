@@ -1,5 +1,5 @@
-FROM sunfmin/golangskaffoldhello as builder
-WORKDIR ${GOPATH}/src/github.com/sunfmin/skaffoldhello
+FROM sunfmin/app2dep as builder
+WORKDIR ${GOPATH}/src/github.com/sunfmin/skaffoldhello/app2
 COPY . .
 RUN set -x && \
     go get -d -v . && \

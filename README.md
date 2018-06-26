@@ -1,3 +1,5 @@
+This is a sample setup for using https://github.com/GoogleContainerTools/skaffold and Go multi-stage build for fast development cycle with local kubernetes
+
 # Download Docker for Desktop Edge
 
 https://store.docker.com/editions/community/docker-ce-desktop-mac
@@ -26,7 +28,8 @@ your-registry-server could be `https://index.docker.io/v1/ `
 # Build Go packages dependency image for compile Go program
 
 ```
-docker build -t sunfmin/golangskaffoldhello -f Dockerfile.dep .
+cd app1 && docker build -t sunfmin/app1dep -f Dockerfile.dep .
+cd app2 && docker build -t sunfmin/app2dep -f Dockerfile.dep .
 ```
 
 # Run skaffold
@@ -34,3 +37,8 @@ docker build -t sunfmin/golangskaffoldhello -f Dockerfile.dep .
 ```
 skaffold dev
 ```
+
+Use your browser to access:
+
+- app1: `http://localhost:9090`
+- app2: `http://localhost:9091`
