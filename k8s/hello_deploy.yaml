@@ -1,0 +1,36 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: skaffoldhello-service
+  labels:
+    app: skaffoldhello-service
+spec:
+  ports:
+    - port: 8080
+      name: skaffoldhello-port
+      nodePort: 31000
+      targetPort: 8080
+  selector:
+    app: skaffoldhello
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skaffoldhello
+  labels:
+    app: skaffoldhello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skaffoldhello
+  template:
+    metadata:
+      labels:
+        app: skaffoldhello
+    spec:
+      containers:
+      - name: skaffoldhello
+        image: sunfmin/skaffoldhello
