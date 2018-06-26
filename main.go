@@ -16,11 +16,12 @@ func main() {
 	fmt.Println("age", viper.GetInt("age"))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
+		fmt.Fprintf(w, "Hello 123, %q", html.EscapeString(r.URL.Path))
 	})
 
 	fmt.Println("starting at :8080")
 	fmt.Println("Hello1")
+	fmt.Println("Hello2")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		panic(err)
