@@ -1,4 +1,4 @@
-FROM registry.theplant-dev.com/sunfmin/app2dep as builder
+FROM registry.theplant-dev.com/sunfmin/app2dep:latest as builder
 WORKDIR ${GOPATH}/src/github.com/sunfmin/skaffoldhello/app2
 COPY . .
 RUN set -x && \
